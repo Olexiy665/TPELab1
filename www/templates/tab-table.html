@@ -1,0 +1,63 @@
+<ion-view view-title="Таблиця">
+
+  <ion-content class="padding" on-swipe-right="goBack()" on-swipe-left="goForward()">
+
+
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="row responsive-sm ">
+      <div class="col col-20">
+        <table class="factors-table">
+          <th class="table-header" ng-repeat="head in horizontalXs track by $index">
+            <span ng-bind-html="head"></span>
+          </th>
+          <tr ng-repeat="row in factorsXs">
+            <th>{{verticalLabelXs[$index]}}</th>
+            <td class="cells" ng-repeat="cell in row track by $index"> {{cell}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col col-10 col-offset-20">
+        <table class="Ys-table">
+          <th> Y</th>
+          <tr ng-repeat="row in Ys track by $index">
+
+            <td> {{row}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col col-33">
+
+        <table class="factors-table">
+          <th ng-repeat="head in horizontalXsN track by $index">
+            <span ng-bind-html="head"></span>
+          </th>
+          <tr ng-repeat="row in normalXs">
+            <th>{{verticalLabelXs[$index]}}</th>
+            <td class="cells" ng-repeat="cell in row track by $index"> {{cell}}</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class='col col-33'>
+        <table class="factors-table small-table">
+          <tr>
+            <th ng-bind-html="dXsHead"></th>
+            <td ng-repeat="cell in dXs track by $index"> {{dXs[$index]}}</td>
+          </tr>
+          <tr>
+            <th ng-bind-html="Xs0Head"></th>
+            <td ng-repeat="cel in Xs0 track by $index">{{Xs0[$index]}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+
+  </ion-content>
+</ion-view>

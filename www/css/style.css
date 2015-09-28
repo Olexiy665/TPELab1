@@ -1,0 +1,46 @@
+/* Empty. Add your own CSS if you like */
+
+.col table {
+  width: 100%;
+  text-align: center;
+}
+
+.col td {
+  border: 1px dotted black !important;
+
+}
+
+.col .small-table td {
+  min-width: 30px;
+}
+
+.col th {
+  border: 1px dotted black;
+
+  background-color: #387ef5;
+
+}
+
+.col th table-header {
+  background-color: #FFF59D;
+}
+
+.answer table {
+  width: 100%;
+  text-align: center;
+}
+
+.answer td {
+  border: 1px dotted black !important;
+
+}
+
+.equation .ng-invalid {
+  border: 3px solid rgb(232, 132, 108);
+  border-radius: 5px;
+}
+
+.equation .ng-valid {
+  border: 3px solid #A2C5BF;
+  border-radius: 5px;
+}

@@ -1,0 +1,53 @@
+<ion-view view-title="Початкові значення" on-swipe-right="goBack()" on-swipe-left="goForward()">
+  <ion-content class="padding">
+    <form name="inputForm">
+      <label class="input-label"> Кількість факторів: {{factors.value}}/{{factors.max}} </label>
+
+      <div class="range">
+
+        <i class="icon ion-android-remove"></i>
+        <input type="range" min="{{factors.min}}" max="9" step="1" name="factors" ng-model="factors.value">
+        <i class="icon ion-android-add"></i>
+      </div>
+
+      <label class="input-label"> Кількість експерементів: {{experiments.value}}/{{experiments.max}} </label>
+
+      <div class="range">
+        <i class="icon ion-android-remove"></i>
+        <input type="range" min="{{experiments.min}}" max="10" step="1" name="experiments" ng-model="experiments.value">
+        <i class="icon ion-android-add"></i>
+      </div>
+      <button class="button button-block button-positive" ng-click="update(factors, experiments);viewFunction = true">
+        Зберегти!
+      </button>
+    </form>
+
+
+    <div ng-show="viewFunction">
+      <form>
+
+        <ul class="equation">
+          <li>
+            <label class="item item-input">
+              Y = <input type="tel" ng-model="eqAr0" placeholder="a0" required>
+            </label>
+          </li>
+          <li ng-repeat="a in eqAr track by $index">
+
+            <label class="item item-input">
+
+              <span>+</span> <input ng-model="eqAr[$index]" type="tel" placeholder="a{{$index+1}}" required>
+              <span>x<sub>{{$index+1}}</sub></span>
+            </label>
+          </li>
+        </ul>
+
+        <button class="button button-block button-positive" ng-click="createCoeffArray(eqAr, eqAr0)">Розрахувати!
+        </button>
+
+      </form>
+    </div>
+
+
+  </ion-content>
+</ion-view>
